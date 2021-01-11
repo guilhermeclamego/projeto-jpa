@@ -12,12 +12,12 @@ public class AlteraSaldoConta {
 		EntityManager em = emf.createEntityManager();
 		
 		//buscando a conta com ID 1 para alterar
-		Conta conta = em.find(Conta.class, 1L);
+		Conta conta = em.find(Conta.class, 2L);
 		
 		System.out.println("Conta do ID: " + conta.getId() + " titular: " + conta.getTitular());
 		
 		em.getTransaction().begin();
-		conta.setSaldo(20.00);
+		conta.setSaldo(2080.00);
 		em.getTransaction().commit();
 	}
 }
