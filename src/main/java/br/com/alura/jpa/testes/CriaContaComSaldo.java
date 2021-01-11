@@ -12,15 +12,23 @@ public class CriaContaComSaldo {
 		EntityManager em = emf.createEntityManager();
 
 		Conta conta = new Conta();
-		conta.setTitular("Ingrid");
-		conta.setNumero(123);
-		conta.setAgencia(56484);
-		conta.setSaldo(500.00);
+		conta.setTitular("Márcia");
+		conta.setNumero(1253);
+		conta.setAgencia(11484);
+		conta.setSaldo(100.00);
 
 		em.getTransaction().begin();
-
 		em.persist(conta);
-
 		em.getTransaction().commit();
+		em.close();
+		
+		EntityManager em2 = emf.createEntityManager();
+		System.out.println("ID da Conta da Márcia: " + conta.getId());
+		conta.setSaldo(500.00);
+		
+		em2.getTransaction().begin();
+		em2.merge(conta); //Merge irá pegar um detached (já foi commitado e dado close na transação) e a torna Managed novamente 
+		em2.getTransaction().commit();
+		
 	}
 }
