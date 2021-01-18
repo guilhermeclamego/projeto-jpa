@@ -23,7 +23,7 @@ public class CriaContaComSaldo {
 		em.close();
 		
 		EntityManager em2 = emf.createEntityManager();
-		System.out.println("ID da Conta da M�rcia: " + conta.getId());
+		System.out.println("ID da Conta da Marcia: " + conta.getId());
 		conta.setSaldo(500.00);
 		
 		em2.getTransaction().begin();

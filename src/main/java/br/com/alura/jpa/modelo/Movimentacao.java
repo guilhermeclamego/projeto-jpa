@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Movimentacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private TipoMovimentacao tipoMovimentacao; // enum
@@ -24,12 +24,12 @@ public class Movimentacao {
     @ManyToOne
     private Conta conta;
 
-    public Integer getId() {
-    	return id;
+    public Long getId() {
+        return id;
     }
 
-    public void setId(Integer id) {
-    	this.id = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public BigDecimal getValor() {
@@ -37,46 +37,46 @@ public class Movimentacao {
     }
 
     public void setValor(BigDecimal valor) {
-    	this.valor = valor;
+        this.valor = valor;
     }
 
     public TipoMovimentacao getTipoMovimentacao() {
-    	return tipoMovimentacao;
+        return tipoMovimentacao;
     }
 
     public void setTipoMovimentacao(TipoMovimentacao tipoMovimentacao) {
-    	this.tipoMovimentacao = tipoMovimentacao;
+        this.tipoMovimentacao = tipoMovimentacao;
     }
 
     public LocalDateTime getData() {
-    	return data;
+        return data;
     }
 
     public void setData(LocalDateTime data) {
-    	this.data = data;
+        this.data = data;
     }
 
     public String getDescricao() {
-    	return descricao;
+        return descricao;
     }
 
     public void setDescricao(String descricao) {
-    	this.descricao = descricao;
+        this.descricao = descricao;
     }
 
     public Conta getConta() {
-    	return conta;
+        return conta;
     }
 
     public void setConta(Conta conta) {
-    	this.conta = conta;
+        this.conta = conta;
     }
 
-	public List<Categoria> getCategorias() {
-		return categorias;
-	}
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
 
-	public void setCategorias(List<Categoria> categorias) {
-		this.categorias = categorias;
-	}
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
 }
