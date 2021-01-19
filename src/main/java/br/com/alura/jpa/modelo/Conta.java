@@ -16,7 +16,7 @@ public class Conta {
     private Double saldo;
     //fetch.EAGER, executar primeiro o sql de movimentações, depois as contas, porém isso não é escalável
     @OneToMany(mappedBy = "conta", fetch = FetchType.EAGER)
-    private List<Movimentacao> movimentacaos;
+    private List<Movimentacao> movimentacoes;
 
     public Long getId() {
         return id;
@@ -59,6 +59,6 @@ public class Conta {
     }
 
     public List<Movimentacao> getMovimentacoes(){
-        return movimentacaos;
+        return movimentacoes;
     }
 }
