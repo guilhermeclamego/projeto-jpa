@@ -16,7 +16,10 @@ public class TestaMovimentacaoConta {
         Movimentacao movimentacao = em.find(Movimentacao.class, 1L);
         Conta conta = movimentacao.getConta();
 
-        System.out.println("Titular da Conta: " + movimentacao);
+        int quantidadeDeMovimentacoes = conta.getMovimentacoes().size();
+
+        System.out.println("Quantidade de Movimentações: " + quantidadeDeMovimentacoes);
+        System.out.println("Titular da Conta: " + conta.getTitular());
     }
 
 }
