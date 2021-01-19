@@ -14,6 +14,7 @@ public class Conta {
     private Integer numero;
     private String titular;
     private Double saldo;
+    //fetch.EAGER, executar primeiro o sql de movimentações, depois as contas, porém isso não é escalável
     @OneToMany(mappedBy = "conta", fetch = FetchType.EAGER)
     private List<Movimentacao> movimentacaos;
 
