@@ -13,7 +13,12 @@ public class TestaRelatorioDasMovimentacoes {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("alura");
         EntityManager em = emf.createEntityManager();
 
-        String jpql = "select c from Conta c";
+        /**
+         * Trazer as movimentações junto na consulta da Conta, usando o left join fetch.
+         * Se não, iria consultas as contas e depois as movimentações, tornando o projeto não escalável.
+         * Lembrar, que na classe conta foi necessário adicionar FetchType
+        */
+        String jpql = "select c from Conta c left join fetch c.movimentacoes";
         TypedQuery<Conta> query = em.createQuery(jpql, Conta.class);
 
         List<Conta> contas = query.getResultList();
