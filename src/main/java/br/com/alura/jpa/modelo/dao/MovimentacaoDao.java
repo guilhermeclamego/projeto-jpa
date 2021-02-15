@@ -24,8 +24,7 @@ public class MovimentacaoDao {
 
     public BigDecimal getSomaDasMovimentacoes(){
         //Soma dos valores
-        String jpqlSum = "select sum(m.valor) from Movimentacao m";
-        TypedQuery<BigDecimal> querySum = em.createQuery(jpqlSum, BigDecimal.class);
+        TypedQuery<BigDecimal> querySum = em.createNamedQuery("mediaDiariaMovimentacoes", BigDecimal.class);
         return querySum.getSingleResult();
 
 
