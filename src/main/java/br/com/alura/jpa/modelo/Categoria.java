@@ -14,6 +14,7 @@ public class Categoria {
 
     @Deprecated //apenas convenção, pois esse construtor está aqui só por causa do hibernate
     public Categoria(){
+
         //Hibernate é necessário ter o construtor padrão
     }
 
